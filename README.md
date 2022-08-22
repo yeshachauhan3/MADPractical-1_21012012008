@@ -13,5 +13,9 @@ pr1.6
 ![image](https://user-images.githubusercontent.com/110628046/185979209-783c883e-c8d8-40ae-a7cd-81eab886a564.png)
 pr1.7
 ![image](https://user-images.githubusercontent.com/110628046/185980938-df89a64e-62c8-474d-8eda-91befa6c680c.png)
+pr1.8
+![image](https://user-images.githubusercontent.com/110628046/185982737-34cb3e0b-fc16-4741-87a2-a3bd56d39c99.png)
+pr1.9
+![image](https://user-images.githubusercontent.com/110628046/185983411-3f3e6507-7c17-4ce7-869b-b987dcd5f636.png)
 
 
