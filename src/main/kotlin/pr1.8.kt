@@ -1,71 +1,61 @@
-//.Create different types of Array as shown in image. Explore Arrays.deepToString(), contentDeepToString() methods, IntArray variable .joinToString()  and use in program to print Array. Explore range, downTo, until etc. for loop and use in this program. Sort Array of Integer data type without using inbuilt function & with using inbuilt function
-import java.util.Arrays
-import java.util.*
 fun main() {
-    println("Create Array-1 using arrayof() method")
-    val a1 = arrayOf(1, 2, 3, 4)
-    print("[")
-    a1.forEach { print(" $it ") }
-    print("]\n")
 
-    println("create Array-2 using array<>()")
-    val a2 = arrayOf<Int>(1, 2, 3)
-    print("[")
-    a2.forEach { print(" $it ") }
-    print("]\n")
-    print("[")
-    println("create Array-3 using array<>() and lambda function")
-    val a3 = Array(5, { i -> i * 1 })
-    a3.forEach { print(" $it ") }
-    print("]\n")
-    println("create Array-4 using Intarrayof()")
-    print("[")
-    val a4 = intArrayOf(1, 2, 3, 4)
-    for (i in 0..a4.size-1)
-    {
-        print(" ${a4[i]} ")
+    println("arrayOf() Method : ")
+    val a1 = arrayOf(56, 40, 60, 30, 10)
+    println(a1.contentToString())
+
+    println("Array<>() : ")
+    val a2 = Array(5) { 0 }
+    println(a2.contentToString())
+
+    println("Array<>() and lambda function : ")
+    val a3 = Array(8) { i -> i }
+    println(a3.contentToString())
+
+    println("IntArray() : ")
+    val a4 = IntArray(5)
+    println(a4.joinToString(", "))
+
+    println("intArrayOf() : ")
+    val a5 = intArrayOf(13, 6, 13, 12, 90, 34)
+    println(a5.joinToString(", "))
+
+    println("2-D Array using arrayOf() & intArrayOf() : ")
+    val a6 = arrayOf(intArrayOf(1, 3), intArrayOf(4, 5), intArrayOf(6, 7))
+    println(a6.contentDeepToString())
+
+    print("Enter the number of Elements : ")
+    val size: Int = readLine()!!.toInt()
+    val a7 = IntArray(size) { 0 }
+
+    for (i in 0 until size) {
+        print("Enter the Element : ")
+        a7[i] = readLine()!!.toInt()
     }
-    print("]\n")
-    println("create Array-5 using Intarray()")
-    print("[")
-    val a5 = IntArray(5) { 10 * (it + 1) }
-    for (i in 0..a5.size-1)
-    {
-        print(" ${a5[i]} ")
-    }
-    print("]\n")
-    println("create 2-D Array-6 by using arrayof() and intarrayof()")
-    val a6 = arrayOf(intArrayOf(1, 2),intArrayOf(3, 4),intArrayOf(5, 6, 7))
-    println(Arrays.deepToString(a6))
-    println("---Please Enter Array Values----")
-    print("Size:-")
-    val size = readLine()!!.toInt()
-    var a7 = Array<Int>(size) { readLine()!!.toInt() }
-    println("---Entered values---")
-    print("[ ")
-    print(a7.joinToString())
-    print(" ]\n")
-    println("************With Built-in Function*************")
-    println("**********After sorting by built-in function**********")
+
+    println("\nEntered Array : ")
+    println(a7.contentToString())
+
+    println("-------With In-Built Function-------")
+    println("in-built Function : ")
     a7.sort()
-    print("[ ")
-    print(a7.joinToString())
-    print(" ]\n")
-    println("************without built-in function**********")
-    println("***********After Sorting**********")
-    var temp = 0
-    for (i in 0..a7.size-1) {
-        for (j in i+1..a7.size-1)
-        {
-            if (a7[i] > a7[j])
-            {
-                temp = a7[i];
-                a7[i] = a7[j];
-                a7[j] = temp;
+    println(a7.contentToString())
+
+    val a8 = intArrayOf(34, 78, 12, 0, 89, 45, -23, -67, -999, 980)
+    println("-------Without In-Built Function-------")
+    println("without in-built Function : ")
+    println(a8.contentToString())
+
+    var temp: Int
+    for (i in a8.indices) {
+        for (j in a8.indices) {
+            if (a8[j] > a8[i]) {
+                temp = a8[j]
+                a8[j] = a8[i]
+                a8[i] = temp
             }
         }
     }
-    print("[ ")
-    print(a7.joinToString())
-    print(" ]\n")
+    println("without in-built Function : ")
+    println(a8.contentToString())
 }
